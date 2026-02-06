@@ -32,21 +32,34 @@
     <p class="servers-subtitle" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">Live Teamspeak channels and users</p>
 
     <div class="viewer-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
-      <div class="viewer-frame-wrap">
-        <iframe
-          class="viewer-frame"
-          src="https://web.reape.rs/viewer.php"
-          title="Teamspeak viewer for ts.reape.rs"
-          loading="lazy"
-          referrerpolicy="no-referrer"
-        ></iframe>
+      <div class="viewer-summary">
+        <div class="viewer-summary-left">
+          <div class="viewer-server-name" id="viewer-server-name">Loading...</div>
+          <div class="viewer-server-meta" id="viewer-server-meta">Online: -- | Channels: --</div>
+          <div class="viewer-updated" id="viewer-updated">Updated: --:--</div>
+        </div>
+        <div class="viewer-summary-right">
+          <button class="viewer-refresh btn-ripple" id="viewer-refresh" type="button">
+            <i class="fas fa-rotate-right"></i> Refresh
+          </button>
+        </div>
       </div>
+
+      <div class="viewer-status" id="viewer-status">
+        <span class="viewer-status-badge loading"><i class="fas fa-spinner fa-spin"></i> Loading viewer...</span>
+      </div>
+
+      <div class="viewer-tree" id="viewer-tree" aria-live="polite"></div>
+
       <div class="viewer-actions">
         <a class="viewer-action btn-ripple" href="https://web.reape.rs/viewer.php" target="_blank" rel="noopener">
           <i class="fas fa-globe"></i> Open on web.reape.rs
         </a>
+        <a class="viewer-action btn-ripple" href="ts3server://ts.reape.rs" rel="noopener">
+          <i class="fas fa-headset"></i> Connect to ts.reape.rs
+        </a>
       </div>
-      <p class="viewer-note">Viewer data is provided by web.reape.rs.</p>
+      <p class="viewer-note">Viewer data is provided by GameMonitor API.</p>
     </div>
   </main>
 
