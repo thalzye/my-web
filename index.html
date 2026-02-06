@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7hal — Personal</title>
+  <meta name="description" content="7hal · Creator & developer building cool stuff on the internet. Server management, coding, and more.">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="7hal — Personal">
+  <meta property="og:description" content="Creator & developer building cool stuff on the internet. Server management, coding, and more.">
+  <meta property="og:image" content="https://cdn.discordapp.com/avatars/184723293599825921/71b8f4b118ada56c6bdd4077591ac8f6.png?size=256">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="7hal — Personal">
+  <meta name="twitter:description" content="Creator & developer building cool stuff on the internet.">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Particle.js container -->
+  <div id="particles-js"></div>
+
+  <!-- Black tiles background pattern -->
+  <div class="tiles-bg" aria-hidden="true"></div>
+
+  <main class="main-content" id="main-content">
+    <div class="profile-wrapper" id="profile" data-aos="fade-up" data-aos-duration="800">
+      <!-- Tilt card container -->
+      <div class="tilt-card" id="tilt-card" data-discord-id="184723293599825921">
+        <div class="tilt-inner">
+          <div class="avatar-wrap">
+            <span class="avatar-tooltip" id="avatar-status-tooltip" aria-live="polite"></span>
+            <div class="avatar-circle" id="discord-avatar" data-status="">
+              <img id="avatar-img" src="" alt="7hal" />
+              <span class="status-dot sr-only" id="status-dot" aria-hidden="true" title="Loading..."></span>
+            </div>
+          </div>
+          <h1 class="display-name gradient-text">7hal</h1>
+          <p class="info-sub">26 yo · 🇭🇷</p>
+          <p class="bio">Creator · Developer · Building cool stuff on the internet.</p>
+          <p class="zagreb-time"><i class="fas fa-clock" aria-hidden="true"></i> <span id="zagreb-clock" aria-live="polite">--:--:--</span></p>
+          <div class="social-buttons" id="links">
+            <a href="https://discord.com/users/184723293599825921" class="social-btn btn-ripple" aria-label="Discord" target="_blank" rel="noopener">
+              <i class="fab fa-discord"></i>
+            </a>
+            <a href="https://twitter.com/lerdi" class="social-btn btn-ripple" aria-label="Twitter" target="_blank" rel="noopener">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://github.com/thalzye" class="social-btn btn-ripple" aria-label="GitHub" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://instagram.com/thal" class="social-btn btn-ripple" aria-label="Instagram" target="_blank" rel="noopener">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://youtube.com/@txal" class="social-btn btn-ripple" aria-label="YouTube" target="_blank" rel="noopener">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://steamcommunity.com/id/7hal" class="social-btn btn-ripple" aria-label="Steam" target="_blank" rel="noopener">
+              <i class="fab fa-steam"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer-buttons" id="card-footer-buttons">
+        <a href="about.html" class="card-footer-btn btn-ripple card-footer-btn-reveal" aria-label="About">
+          <span class="card-footer-tooltip">About</span>
+          <i class="fas fa-question"></i>
+        </a>
+        <a href="tools.html" class="card-footer-btn btn-ripple card-footer-btn-reveal" aria-label="Tools">
+          <span class="card-footer-tooltip">Tools</span>
+          <i class="fas fa-wrench"></i>
+        </a>
+        <a href="servers.html" class="card-footer-btn btn-ripple card-footer-btn-reveal" aria-label="Servers">
+          <span class="card-footer-tooltip">Servers</span>
+          <i class="fas fa-server"></i>
+        </a>
+        <a href="friends.html" class="card-footer-btn btn-ripple card-footer-btn-reveal" aria-label="Friends">
+          <span class="card-footer-tooltip">Friends</span>
+          <i class="fa-solid fa-heart"></i>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

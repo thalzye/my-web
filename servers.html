@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servers — 7hal</title>
+  <meta name="description" content="Live server status — Teamspeak 3 & Minecraft servers. Real-time player counts and connection info from GameMonitor.">
+  <meta name="theme-color" content="#22c55e">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Servers — 7hal">
+  <meta property="og:description" content="Live server status — TS3 & Minecraft. Real-time player counts and connection info.">
+  <meta property="og:image" content="https://skins.mcstats.com/bust/83fe4a28-362c-4898-a655-925348bd5f27">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Servers — 7hal">
+  <meta name="twitter:description" content="Live server status — TS3 & Minecraft. Real-time player counts.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-status="online">
+  <div id="particles-js"></div>
+  <div class="tiles-bg" aria-hidden="true"></div>
+
+  <main class="main-content servers-page">
+    <nav class="servers-nav">
+      <a href="/" class="nav-link btn-ripple"><i class="fas fa-arrow-left"></i> Home</a>
+    </nav>
+    <h1 class="servers-title gradient-text" data-aos="fade-up" data-aos-duration="600">Server Status</h1>
+    <p class="servers-subtitle" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">Live status from GameMonitor</p>
+
+    <div class="servers-grid" id="servers-grid">
+      <div class="server-card loading" id="server-10694925" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
+        <div class="server-card-inner">
+          <div class="server-loading"><i class="fas fa-spinner fa-spin"></i> Loading...</div>
+        </div>
+      </div>
+      <div class="server-card loading" id="server-10866628" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+        <div class="server-card-inner">
+          <div class="server-loading"><i class="fas fa-spinner fa-spin"></i> Loading...</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="servers.js"></script>
+</body>
+</html>

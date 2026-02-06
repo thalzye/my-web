@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tools — 7hal</title>
+  <meta name="description" content="Useful tools — Discord timestamp generator and more.">
+  <meta name="theme-color" content="#5865F2">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tools — 7hal">
+  <meta property="og:description" content="Discord timestamp generator and useful tools.">
+  <meta property="og:image" content="https://cdn.discordapp.com/avatars/184723293599825921/71b8f4b118ada56c6bdd4077591ac8f6.png?size=256">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Tools — 7hal">
+  <meta name="twitter:description" content="Discord timestamp generator and useful tools.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="tools-page">
+  <div id="particles-js"></div>
+  <div class="tiles-bg" aria-hidden="true"></div>
+
+  <main class="main-content tools-page-content">
+    <nav class="tools-nav">
+      <a href="index.html" class="nav-link btn-ripple"><i class="fas fa-arrow-left"></i> Home</a>
+    </nav>
+    <h1 class="tools-title gradient-text" data-aos="fade-up" data-aos-duration="600">Tools</h1>
+    <p class="tools-subtitle" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">Useful utilities</p>
+
+    <div class="tools-grid">
+      <div class="tool-card tilt-card" id="discord-timestamp-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
+        <div class="tilt-inner tool-card-inner">
+          <h2 class="tool-card-title"><i class="fab fa-discord"></i> Discord Timestamp</h2>
+          <p class="tool-card-desc">Get a dynamic date-time display in your Discord messages. Choose your time and copy the code below.</p>
+
+          <div class="timestamp-tool-grid">
+            <div class="timestamp-row">
+              <label for="ts-date">Date</label>
+              <input type="date" id="ts-date">
+            </div>
+            <div class="timestamp-row">
+              <label for="ts-time">Time</label>
+              <input type="time" id="ts-time">
+            </div>
+            <div class="timestamp-row">
+              <label for="ts-type">Type</label>
+              <select id="ts-type">
+                <option value="t">short time</option>
+                <option value="T">long time</option>
+                <option value="d">short date</option>
+                <option value="D">long date</option>
+                <option value="f">long date with short time</option>
+                <option value="F">long date with day of week and short time</option>
+                <option value="R" selected>relative</option>
+              </select>
+            </div>
+            <div class="timestamp-row timestamp-preview-row">
+              <label>Preview</label>
+              <span id="ts-preview" class="ts-preview"></span>
+            </div>
+            <div class="timestamp-row timestamp-output-row">
+              <label for="ts-code">Output</label>
+              <div class="ts-output-wrap">
+                <input type="text" readonly id="ts-code" class="ts-code" title="Press Ctrl/Cmd+C to copy">
+                <button type="button" id="ts-copy" class="tool-btn"><i class="fas fa-copy"></i> Copy</button>
+              </div>
+            </div>
+            <div class="timestamp-row timestamp-actions">
+              <button type="button" id="ts-current" class="tool-btn tool-btn-secondary"><i class="fas fa-clock"></i> Reset to current time</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="tools.js"></script>
+</body>
+</html>

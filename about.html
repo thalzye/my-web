@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — 7hal</title>
+  <meta name="description" content="About 7hal — Developer, MC & TS3 server management. Languages, projects, and how to get in touch via Discord.">
+  <meta name="theme-color" content="#a855f7">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="About — 7hal">
+  <meta property="og:description" content="Developer, MC & TS3 server management. Languages, projects, and how to get in touch via Discord.">
+  <meta property="og:image" content="https://cdn.discordapp.com/avatars/184723293599825921/71b8f4b118ada56c6bdd4077591ac8f6.png?size=256">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="About — 7hal">
+  <meta name="twitter:description" content="Developer, MC & TS3 server management. Get in touch via Discord.">
+  <base href="./">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+<body class="about-page">
+  <div id="particles-js"></div>
+  <div class="tiles-bg" aria-hidden="true"></div>
+
+  <main class="main-content about-page-content">
+    <nav class="about-nav">
+      <a href="index.html" class="nav-link btn-ripple"><i class="fas fa-arrow-left"></i> Home</a>
+    </nav>
+    <div class="profile-wrapper">
+      <div class="about-card tilt-card" id="about-card" data-aos="fade-up" data-aos-duration="800">
+        <div class="tilt-inner">
+          <h1 class="display-name gradient-text">About</h1>
+          <p class="bio about-bio">Developer & creator. Building things on the internet.</p>
+
+          <section class="about-section">
+            <h2 class="about-section-title"><i class="fas fa-code"></i> Languages & Tools</h2>
+            <p class="about-text"><a href="tools.html" class="about-link">Tools</a> — Discord timestamp generator & more.</p>
+            <div class="about-lang-icons">
+              <i class="devicon-javascript-plain" title="JavaScript"></i>
+              <i class="devicon-typescript-plain" title="TypeScript"></i>
+              <i class="devicon-html5-plain" title="HTML5"></i>
+              <i class="devicon-css3-plain" title="CSS3"></i>
+              <i class="devicon-python-plain" title="Python"></i>
+              <i class="devicon-nodejs-plain" title="Node.js"></i>
+              <i class="devicon-react-original" title="React"></i>
+              <i class="devicon-git-plain" title="Git"></i>
+            </div>
+          </section>
+
+          <section class="about-section">
+            <h2 class="about-section-title"><i class="fas fa-server"></i> Services</h2>
+            <p class="about-text">MC & TS3 Server Management — <a href="mc.html" class="about-link">Minecraft profile</a></p>
+          </section>
+
+          <section class="about-section">
+            <h2 class="about-section-title"><i class="fas fa-folder-open"></i> Projects</h2>
+            <p class="about-text">Projects I'm working on are available to see on the <a href="servers.html" class="about-link">Servers</a> page — those are the projects.</p>
+          </section>
+
+          <section class="about-section">
+            <h2 class="about-section-title"><i class="fas fa-envelope"></i> Get in Touch</h2>
+            <p class="about-text">Best way to get in touch is via Discord — just send a request, I'll get back to you whenever.</p>
+            <a href="https://discord.com/users/184723293599825921" class="discord-widget btn-ripple" id="discord-widget" target="_blank" rel="noopener" data-discord-id="184723293599825921">
+              <span class="discord-widget-tooltip" id="discord-widget-tooltip">Loading...</span>
+              <div class="discord-widget-avatar" id="discord-widget-avatar" data-status="">
+                <img id="discord-widget-img" src="" alt="">
+              </div>
+              <div class="discord-widget-info">
+                <span class="discord-widget-username" id="discord-widget-username">7hal</span>
+                <span class="discord-widget-status" id="discord-widget-status">—</span>
+              </div>
+              <i class="fab fa-discord discord-widget-icon"></i>
+            </a>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="about.js"></script>
+</body>
+</html>
