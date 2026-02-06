@@ -161,21 +161,23 @@ function parseChannelName(name) {
 }
 
 function buildViewerRow(entry) {
-  var row = document.createElement('div');
-  row.className = 'viewer-row' + (entry.isSpacer ? ' spacer' : '');
-  row.style.setProperty('--depth', entry.depth || 0);
-
-  var channel = document.createElement('div');
-  channel.className = 'viewer-channel';
+  var card = document.createElement('div');
+  card.className = 'viewer-channel-card' + (entry.isSpacer ? ' spacer' : '');
+  card.style.setProperty('--depth', entry.depth || 0);
 
   if (entry.isSpacer) {
     var spacerText = document.createElement('span');
-    spacerText.className = 'viewer-channel-name';
+    spacerText.className = 'viewer-spacer-text';
     spacerText.textContent = entry.name;
-    channel.appendChild(spacerText);
-    row.appendChild(channel);
-    return row;
+    card.appendChild(spacerText);
+    return card;
   }
+
+  var header = document.createElement('div');
+  header.className = 'viewer-channel-header';
+
+  var info = document.createElement('div');
+  info.className = 'viewer-channel-info';
 
   var icon = document.createElement('span');
   icon.className = 'viewer-channel-icon';
@@ -188,18 +190,22 @@ function buildViewerRow(entry) {
     name.title = entry.topic;
   }
 
-  channel.appendChild(icon);
-  channel.appendChild(name);
-  row.appendChild(channel);
+  info.appendChild(icon);
+  info.appendChild(name);
+  header.appendChild(info);
+
+  var count = document.createElement('span');
+  count.className = 'viewer-channel-count';
+  count.textContent = entry.clients + (entry.clients === 1 ? ' user' : ' users');
+  header.appendChild(count);
+
+  card.appendChild(header);
 
   if (entry.clients > 0) {
-    var count = document.createElement('span');
-    count.className = 'viewer-channel-count';
-    count.textContent = entry.clients + (entry.clients === 1 ? ' user' : ' users');
-    row.appendChild(count);
+    card.appendChild(buildUserList(entry.clients));
   }
 
-  return row;
+  return card;
 }
 
 function setViewerStatus(state, message) {
@@ -237,4 +243,46 @@ function formatTime(date) {
   var mm = String(d.getMinutes()).padStart(2, '0');
   var ss = String(d.getSeconds()).padStart(2, '0');
   return hh + ':' + mm + ':' + ss;
+}
+
+function buildUserList(count) {
+  var list = document.createElement('div');
+  list.className = 'viewer-user-list';
+  var maxShown = 6;
+  var showCount = Math.min(count, maxShown);
+
+  for (var i = 1; i <= showCount; i += 1) {
+    list.appendChild(buildUserItem('User ' + i));
+  }
+
+  if (count > maxShown) {
+    var more = document.createElement('span');
+    more.className = 'viewer-user viewer-user-more';
+    more.textContent = '+' + (count - maxShown) + ' more';
+    list.appendChild(more);
+  }
+
+  return list;
+}
+
+function buildUserItem(label) {
+  var user = document.createElement('span');
+  user.className = 'viewer-user';
+
+  var icon = document.createElement('span');
+  icon.className = 'viewer-user-icon';
+  icon.innerHTML = '<i class="fas fa-user" aria-hidden="true"></i>';
+
+  var status = document.createElement('span');
+  status.className = 'viewer-user-status';
+  status.setAttribute('aria-hidden', 'true');
+
+  var name = document.createElement('span');
+  name.className = 'viewer-user-name';
+  name.textContent = label;
+
+  user.appendChild(icon);
+  user.appendChild(status);
+  user.appendChild(name);
+  return user;
 }
