@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viewer — 7hal</title>
+  <meta name="description" content="Live Teamspeak viewer for ts.reape.rs — channels and users.">
+  <meta name="theme-color" content="#22c55e">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Viewer — 7hal">
+  <meta property="og:description" content="Live Teamspeak channels and users for ts.reape.rs.">
+  <meta property="og:image" content="https://skins.mcstats.com/bust/83fe4a28-362c-4898-a655-925348bd5f27">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Viewer — 7hal">
+  <meta name="twitter:description" content="Live Teamspeak channels and users for ts.reape.rs.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-status="online">
+  <div id="particles-js"></div>
+  <div class="tiles-bg" aria-hidden="true"></div>
+
+  <main class="main-content viewer-page">
+    <nav class="servers-nav">
+      <a href="servers.html" class="nav-link btn-ripple"><i class="fas fa-arrow-left"></i> Servers</a>
+    </nav>
+    <h1 class="servers-title gradient-text" data-aos="fade-up" data-aos-duration="600">Viewer</h1>
+    <p class="servers-subtitle" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">Live Teamspeak channels and users</p>
+
+    <div class="viewer-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
+      <div class="viewer-frame-wrap">
+        <iframe
+          class="viewer-frame"
+          src="https://web.reape.rs/viewer.php"
+          title="Teamspeak viewer for ts.reape.rs"
+          loading="lazy"
+          referrerpolicy="no-referrer"
+        ></iframe>
+      </div>
+      <div class="viewer-actions">
+        <a class="viewer-action btn-ripple" href="https://web.reape.rs/viewer.php" target="_blank" rel="noopener">
+          <i class="fas fa-globe"></i> Open on web.reape.rs
+        </a>
+      </div>
+      <p class="viewer-note">Viewer data is provided by web.reape.rs.</p>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="viewer.js"></script>
+</body>
+</html>
