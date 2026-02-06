@@ -1,11 +1,21 @@
 /* ========== GameMonitor API - Server Status ========== */
 const SERVER_IDS = [10694925, 10866628];
+const SERVER_ACTIONS = {
+  10694925: {
+    website: { url: 'https://web.reape.rs', label: 'Website', icon: 'fa-globe', external: true },
+    viewer: { url: 'viewer.html', label: 'Viewer', icon: 'fa-eye', external: false }
+  },
+  10866628: {
+    website: { url: 'https://sghq.network', label: 'Website', icon: 'fa-globe', external: true }
+  }
+};
 
 document.addEventListener('DOMContentLoaded', function() {
   initParticles('online');
   if (typeof AOS === 'object') {
     AOS.init({ duration: 600, easing: 'ease-out-cubic', once: true, offset: 40 });
   }
+  initRipples();
 
   document.getElementById('servers-grid').addEventListener('click', function(e) {
     var el = e.target.closest('.server-connect-copy');
@@ -93,6 +103,7 @@ function renderServer(id, s) {
   if (connect) {
     html += '<p class="server-connect"><code class="server-connect-copy" data-connect="' + escapeHtml(connect) + '" title="Click to copy">' + connectEscaped + '<i class="fas fa-copy"></i></code></p>';
   }
+  html += buildServerActions(id);
 
   card.querySelector('.server-card-inner').innerHTML = html;
 }
@@ -105,7 +116,8 @@ function renderServerError(id, err) {
   card.classList.add('error');
   card.querySelector('.server-card-inner').innerHTML =
     '<div class="server-status-badge error"><i class="fas fa-exclamation-triangle"></i> Error</div>' +
-    '<p class="server-error-msg">Failed to load server data</p>';
+    '<p class="server-error-msg">Failed to load server data</p>' +
+    buildServerActions(id);
 }
 
 function countryCodeToFlag(code) {
@@ -121,4 +133,39 @@ function escapeHtml(str) {
   var div = document.createElement('div');
   div.textContent = str;
   return div.innerHTML;
+}
+
+function buildServerActions(id) {
+  var actions = SERVER_ACTIONS[id];
+  if (!actions) return '';
+  var html = '<div class="server-actions">';
+  if (actions.website) html += buildActionLink(actions.website);
+  if (actions.viewer) html += buildActionLink(actions.viewer);
+  html += '</div>';
+  return html;
+}
+
+function buildActionLink(action) {
+  if (!action || !action.url) return '';
+  var label = escapeHtml(action.label || 'Open');
+  var icon = action.icon ? 'fas ' + action.icon : 'fas fa-link';
+  var attrs = ' class="server-action btn-ripple" href="' + action.url + '" aria-label="' + label + '" title="' + label + '"';
+  if (action.external) {
+    attrs += ' target="_blank" rel="noopener"';
+  }
+  return '<a' + attrs + '><i class="' + icon + '"></i></a>';
+}
+
+function initRipples() {
+  document.addEventListener('click', function(e) {
+    var el = e.target && e.target.closest ? e.target.closest('.btn-ripple') : null;
+    if (!el) return;
+    var ripple = document.createElement('span');
+    ripple.className = 'ripple';
+    var rect = el.getBoundingClientRect();
+    var size = Math.max(rect.width, rect.height);
+    ripple.style.cssText = 'width:' + size + 'px;height:' + size + 'px;left:' + (e.clientX - rect.left - size / 2) + 'px;top:' + (e.clientY - rect.top - size / 2) + 'px;position:absolute;pointer-events:none;';
+    el.appendChild(ripple);
+    setTimeout(function() { ripple.remove(); }, 600);
+  });
 }
